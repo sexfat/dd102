@@ -48,6 +48,30 @@
     }
 }
 
+@mixin margin-dir($dir,$num) {
+    @for $i from 1 through $num {
+        .margin-#{$dir}-#{$i} {
+            margin-#{$dir}: $i * 1px;
+        }
+    }
+}
+
+//Grid
+
+@mixin grid($num) {
+    @for $i from 1 through $num {
+        .col-md-#{$i} {
+            width: ($i / $num) * 100%
+        }
+    }
+}
+
+
+
+
+
+
+
 //清除浮動
 @mixin clearfix() {
     & {
