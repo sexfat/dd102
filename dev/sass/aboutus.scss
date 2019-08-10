@@ -1,5 +1,7 @@
-@import 'var';
-@import 'base';
-@import 'header';
-@import 'aboutcontent';
-@import 'footer';
+@import 'common/var';
+@import 'common/base';
+@import 'common/reset';
+@import 'mixins/mixin';
+@import 'modules/header';
+@import 'modules/footer';
+@import 'modules/content';

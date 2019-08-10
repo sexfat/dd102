@@ -1,40 +1,60 @@
-@import 'var';
-@import 'base';
-@import 'header';
-@import 'content';
-@import 'footer';
+@import 'common/var';
+@import 'common/base';
+@import 'common/reset';
+@import 'mixins/mixin';
+@import 'modules/header';
+@import 'modules/footer';
+@import 'modules/content';
 
+//套件
 
+// @import './plugin/....';
 
+// node_modules/bootstrap-sass/assets/stylesheets/bootstrap
 
+// @import 'node_modules/bootstrap-sass/assets/stylesheets/bootstrap' ;
+// @import  'node_modules/owl.carousel/src/scss/owl.carousel';
 
-@mixin marignauto($paddingTop, $color) {
-    margin: 0 auto;
-    padding-top: $paddingTop;
-    color: $color;
-}
-
-
-
-
-@mixin rect($name, $width:100px, $bgc:null) {
-    .#{$name} {
-        width: $width;
-        height: $width;
-        background-color: $bgc;
-    }
-}
+@include bodysetting(17px);
 
 
 
 
 .wrapper {
-    @include rect(box_01,200px,#f20);
+    @include rect(box_01, 200px, #f20);
 }
-
-
 
 
 .wapper {
     @include marignauto(60px, #f20);
 }
+
+.green {
+    color: green
+}
+
+.blue {
+    color: blue
+}
+
+@mixin blue() {
+    color: blue
+}
+
+.box-blue {
+    width: 100px;
+    @extend .blue;
+    // @extend .green;
+    // @include blue();
+}
+
+$num01: 20px;
+$num02 :2px;
+
+.box {
+    width: $num01 + $num02;
+    height: 210 - 1px;
+    margin: 1 * 20em;
+    font-size: (10 / 12) + px
+}
+

@@ -1,0 +1,64 @@
+//
+
+@mixin marignauto($paddingTop, $color) {
+    margin: 0 auto;
+    padding-top: $paddingTop;
+    color: $color;
+}
+
+
+
+//
+@mixin rect($name, $width:100px, $bgc:null) {
+    .#{$name} {
+        width: $width;
+        height: $width;
+        background-color: $bgc;
+    }
+}
+
+
+//基本設定
+
+
+@mixin bodysetting ($fontbase) {
+
+    body {
+        font-size: $fontbase;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        h1 {
+            font-size: $fontbase * 5
+        }
+
+        h2 {
+            font-size: $fontbase * 4
+        }
+
+        h3 {
+            font-size: $fontbase * 3
+        }
+
+        h4 {
+            font-size: ceil($fontbase * 1.8)
+        }
+
+        h5 {
+            font-size: ceil($fontbase * 1.2)
+        }
+    }
+}
+
+//清除浮動
+@mixin clearfix() {
+    & {
+      *zoom: 1;
+    }
+    &:before,
+    &:after {
+      content: "";
+      display: table;
+    }
+    &:after {
+      clear: both;
+    }
+  }
