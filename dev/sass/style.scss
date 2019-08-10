@@ -1,0 +1,171 @@
+body {
+    background-color: rgb(247, 246, 210);
+    margin: 0;
+    padding: 0;
+}
+
+
+
+@mixin area($num, $bgc) {
+    .section_#{$num} {
+        background-color: $bgc;
+        @content
+    }
+}
+
+
+.section {
+    width: 100vw;
+    height: 100vh;
+}
+
+.section_01 {
+    background-color: rgb(255, 231, 136);
+}
+
+.box {
+    width: 300px;
+    height: 50px;
+    background-color: rgb(0, 255, 200);
+    margin-top: 10px;
+}
+
+
+#play {
+    width: 60px;
+    height: 30px;
+    background-color: rgb(252, 0, 0);
+    cursor: pointer;
+
+
+}
+
+.boxall {
+    background-color: rgb(255, 0, 0);
+    margin: 0 auto;
+}
+
+.box_01 {
+    background-color: rgb(255, 123, 0);
+    margin: 10px auto
+}
+
+
+.box_02 {
+    background-color: rgb(85, 175, 0);
+}
+
+.box_03 {
+    background-color: rgb(0, 102, 255);
+}
+
+
+
+
+
+.section_02 {
+    background-color: rgb(196, 255, 180);
+
+    .scroll_box {
+        margin: 0 auto
+    }
+}
+
+.section_05 {
+
+    background-color: rgb(134, 255, 165);
+
+    .box_05 {
+        background-color: rgb(216, 213, 22);
+        width: 400px;
+        height: 300px;
+        position: relative;
+        left: 400px;
+        top: 100px;
+    }
+
+
+}
+
+
+.section_06 {
+    background-color: rgba(157, 255, 0, 0.61);
+
+    .scbox {
+        width: 300px;
+        height: 100px;
+
+    }
+
+    .scrollbox_01 {
+        background-color: rgb(241, 88, 88);
+    }
+
+    .scrollbox_02 {
+        background-color: rgb(14, 168, 148);
+    }
+
+    .scrollbox_03 {
+        background-color: #fff;
+    }
+}
+
+
+
+.section_07 {
+    overflow: hidden;
+
+    .card {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+
+        &.panel01 {
+            background-color: rgb(136, 255, 0);
+        }
+
+        &.panel02 {
+            background-color: rgb(1, 196, 255);
+        }
+
+        &.panel03 {
+            background-color: rgb(98, 0, 255);
+        }
+    }
+}
+
+
+
+.section_08 {
+    background-image: url(https://placem.at/places);
+    background-color: #000;
+    background-size: cover;
+     
+    %boxs {
+       width: 300px;
+       height: 200px; 
+       position: relative;
+
+    }
+
+    .pinbox_1 {
+      background-color: rgb(0, 162, 255);
+      top: 100px;
+      left: 200px;
+      @extend %boxs
+    }
+    .pinbox_2 {
+        background-color: rgb(255, 188, 4);
+        top: 300px;
+        left: 400px;
+        @extend %boxs
+      }
+      .pinbox_3 {
+        background-color: rgb(94, 255, 0);
+        top: 100px;
+        left: 800px;
+        @extend %boxs
+      }  
+
+
+}

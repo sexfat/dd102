@@ -1,0 +1,40 @@
+@import 'var';
+@import 'base';
+@import 'header';
+@import 'content';
+@import 'footer';
+
+
+
+
+
+@mixin marignauto($paddingTop, $color) {
+    margin: 0 auto;
+    padding-top: $paddingTop;
+    color: $color;
+}
+
+
+
+
+@mixin rect($name, $width:100px, $bgc:null) {
+    .#{$name} {
+        width: $width;
+        height: $width;
+        background-color: $bgc;
+    }
+}
+
+
+
+
+.wrapper {
+    @include rect(box_01,200px,#f20);
+}
+
+
+
+
+.wapper {
+    @include marignauto(60px, #f20);
+}
