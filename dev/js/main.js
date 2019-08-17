@@ -78,7 +78,7 @@ TweenMax.fromTo('.box_00', 2, {
 //===============
 
 
-TweenMax.to(".section_01 .box_04", 3, {
+TweenMax.to(".section_01 .box_04", 1, {
     bezier: {
         type: "cubic",
         curviness: 1.25,
@@ -95,8 +95,11 @@ TweenMax.to(".section_01 .box_04", 3, {
             x: 800,
             y: 300,
 
+        },{
+            x: 1000,
+            y: 1800,
         }],
-        // autoRotate: true,
+        autoRotate: true,
         // autoRotate: 90
     }
 });
@@ -214,10 +217,9 @@ tlts.add(TweenMax.to('.scrollbox_03', 1, {
 
 var scene_s = new ScrollMagic.Scene({
         triggerElement: "#trigger_04",
-        duration: '300%',
-        //畫面最上緣
+        duration: '300%',//畫面最上緣
         triggerHook: 0,
-        //只出現一次
+//只出現一次
         // reverse: false,
     })
     .setPin('.section_06')
@@ -300,7 +302,7 @@ new ScrollMagic.Scene({
 
 
 
+    // 先找到場景，最外層的物件
+    var scene = document.getElementById('parallax_box');
+    var parallax = new Parallax(scene);
 
-function name(aa) {
-    return  aa * 10
-}

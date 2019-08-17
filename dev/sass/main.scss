@@ -166,11 +166,101 @@ $num02 :2px;
 }
 
 
-$list :  a01 a02 a03 a04 a05 btn;
+$list : a01 a02 a03 a04 a05 btn;
 
 
 @each $img in $list {
     .img_#{$img} {
         background: url('./img/#{$img}.jpg');
+    }
+}
+
+$breakpoint: (small: 480px,
+    medium: 720px,
+    desktop : 988px,
+    large: 1366px);
+
+$fonts : (h1 : 38px,
+    h2 : 34px,
+    h3 : 27px,
+    h4 : 26px,
+    h5 : 20px,
+    h6 : 16px);
+
+.h1 {
+    font-size: map-get($fonts, h3)
+}
+
+@each $title,
+$num in $fonts {
+    #{$title} {
+        font-size: $num
+    }
+}
+
+;
+
+
+
+
+
+
+
+
+$breaks: (small: 767px,
+    medium: 768px,
+    desktop : 1200px,
+    large: 1920px);
+
+
+
+
+
+@mixin respondsa($respond) {
+
+    @each $viewpoint,
+    $num in $breakpoint {
+        @if $respond==$viewpoint {
+            @if $viewpoint==small {
+                @media all and (max-width: $num) {
+                    @content;
+                }
+            }
+
+            @else {
+                @media all and (min-width: $num) {
+                    @content;
+                }
+            }
+        }
+    }
+}
+
+
+@include respondsa(desktop) {
+    .vox {
+        width: 100px;
+    }
+}
+
+
+
+// a:hover {
+
+
+//     color: #000;
+
+// }
+
+
+a {
+    &:hover {
+        color: #000;
+    }
+    &:after {
+     content: ''
+    }
+    &.link {
+       font-size: 20px;    
     }
 }

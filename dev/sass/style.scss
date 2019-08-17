@@ -140,32 +140,44 @@ body {
     background-image: url(https://placem.at/places);
     background-color: #000;
     background-size: cover;
-     
+
     %boxs {
-       width: 300px;
-       height: 200px; 
-       position: relative;
+        width: 300px;
+        height: 200px;
+        position: relative;
 
     }
 
     .pinbox_1 {
-      background-color: rgb(0, 162, 255);
-      top: 100px;
-      left: 200px;
-      @extend %boxs
+        background-color: rgb(0, 162, 255);
+        top: 100px;
+        left: 200px;
+        @extend %boxs
     }
+
     .pinbox_2 {
         background-color: rgb(255, 188, 4);
         top: 300px;
         left: 400px;
         @extend %boxs
-      }
-      .pinbox_3 {
+    }
+
+    .pinbox_3 {
         background-color: rgb(94, 255, 0);
         top: 100px;
         left: 800px;
         @extend %boxs
-      }  
+    }
+}
 
-
+.section_10 {
+   .parallaxbox {
+       width: 800px;
+       height: 500px;
+        border:  1px solid #000;
+        margin: 0 auto;
+   } 
+    .para01 {
+      background-color: rgb(217, 255, 2);  
+    }
 }
