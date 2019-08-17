@@ -66,3 +66,111 @@ $num02 :2px;
 
 // @include margin-dir(top, 300);
 // @include margin-dir(left, 300);
+
+
+@mixin width ($width) {
+
+    .box {
+        @if $width>=10px {
+            width: 10px
+        }
+
+        @else {
+            width: 20px
+        }
+    }
+}
+
+@include width(9px);
+
+
+
+@mixin borderR ($num: 5px, $borderRadius : true) {
+    @if $borderRadius {
+        .borderRadius {
+            border-radius: $num;
+        }
+    }
+
+    @else {
+        .borderRadius {
+            border-radius: 0px;
+        }
+    }
+}
+
+@include borderR(0px, false);
+
+
+
+
+@mixin themes($theme) {
+    @if $theme==yellow {
+        body {
+            background-color: yellow;
+            @content;
+        }
+    }
+
+    @else if $theme==blue {
+        body {
+            background-color: blue;
+            @content;
+        }
+    }
+
+    @else {
+        body {
+            background-color: #fff;
+            @content;
+        }
+    }
+}
+
+
+@include themes(yellow) {
+    font-size: 12px;
+    color: yellow;
+
+    .box {
+        background-color: rgb(255, 230, 5);
+    }
+}
+
+
+@include themes(blue) {
+    font-size: 14px;
+    color: blue;
+
+    .box {
+        background-color: rgb(4, 0, 253);
+    }
+}
+
+
+//rwd
+
+@include respond(desktop) {
+    @include bodysetting(14px);
+
+}
+
+
+@include respond(medium) {
+    @include bodysetting(12px);
+}
+
+
+@include respond(small) {
+    @include bodysetting(16px);
+}
+
+
+$list :  a01 a02 a03 a04 a05 btn;
+
+
+@each $img in $list {
+    .img_#{$img} {
+        background: url('./img/#{$img}.jpg');
+    }
+}
